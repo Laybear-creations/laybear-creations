@@ -1,0 +1,3493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Laybear | Handmade With Love 🧶</title>
+
+<meta name="description"
+content="Laybear creates handmade crochet and pipe cleaner crafts, keychains, bouquets, charms and stuffed toys.">
+
+<style>
+
+/* =====================================================
+   LAYBEAR — ONE FILE WEBSITE
+   HTML + CSS + JAVASCRIPT
+   ===================================================== */
+
+:root{
+    --cream:#fffaf6;
+    --cream-dark:#f9eee8;
+    --pink:#d85c7c;
+    --pink-light:#f8cbd5;
+    --pink-soft:#fff0f4;
+    --brown:#4a2920;
+    --brown-light:#76584e;
+    --brown-soft:#9a7669;
+    --white:#ffffff;
+    --lavender:#eee9ff;
+    --yellow:#fff1cf;
+    --green:#dcebd9;
+    --border:#ead9d2;
+    --shadow:0 18px 50px rgba(74,41,32,.10);
+    --shadow-small:0 8px 25px rgba(74,41,32,.08);
+    --radius:28px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:var(--cream);
+    color:var(--brown);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1180px, calc(100% - 40px));
+    margin:auto;
+}
+
+/* =====================================================
+   ANNOUNCEMENT
+   ===================================================== */
+
+.announcement{
+    background:var(--brown);
+    color:white;
+    text-align:center;
+    padding:9px 15px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.2px;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    background:rgba(255,250,246,.95);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    height:76px;
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    font-size:29px;
+    font-weight:950;
+    letter-spacing:-1.8px;
+
+    white-space:nowrap;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f2c6b5;
+    border-radius:17px;
+
+    font-size:28px;
+
+    box-shadow:
+        inset 0 -5px 0 rgba(74,41,32,.08);
+}
+
+.logo-heart{
+    color:var(--pink);
+}
+
+/* NAV */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:27px;
+
+    margin-left:auto;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:750;
+
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:var(--pink);
+}
+
+.nav-order{
+    background:var(--pink);
+    color:white !important;
+
+    padding:12px 19px;
+
+    border-radius:999px;
+
+    box-shadow:
+        0 8px 20px rgba(216,92,124,.2);
+}
+
+.menu{
+    display:none;
+
+    margin-left:auto;
+
+    background:none;
+    border:0;
+
+    font-size:27px;
+
+    color:var(--brown);
+
+    cursor:pointer;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero{
+    min-height:680px;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+
+    align-items:center;
+
+    gap:65px;
+
+    padding:80px 0 70px;
+
+    position:relative;
+}
+
+.hero-left{
+    position:relative;
+    z-index:2;
+}
+
+.small-label{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    background:var(--pink-soft);
+    color:var(--pink);
+
+    padding:9px 15px;
+
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:900;
+}
+
+.hero h1{
+    font-size:78px;
+    line-height:.93;
+
+    letter-spacing:-5px;
+
+    margin:22px 0;
+
+    font-weight:950;
+}
+
+.hero h1 span{
+    color:var(--pink);
+}
+
+.hero-text{
+    max-width:580px;
+
+    color:var(--brown-light);
+
+    font-size:17px;
+
+    margin-bottom:27px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+
+    margin-bottom:30px;
+}
+
+.primary-btn,
+.secondary-btn{
+    border:0;
+    border-radius:999px;
+
+    padding:14px 22px;
+
+    font-size:14px;
+    font-weight:850;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.primary-btn{
+    background:var(--pink);
+    color:white;
+
+    box-shadow:
+        0 10px 25px rgba(216,92,124,.25);
+}
+
+.secondary-btn{
+    background:white;
+    border:1px solid var(--border);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-3px);
+}
+
+.hero-trust{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+
+    color:var(--brown-light);
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.hero-trust span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+/* HERO ART */
+
+.hero-art{
+    min-height:500px;
+
+    position:relative;
+
+    border-radius:42px;
+
+    background:
+        radial-gradient(circle at 80% 15%, #f8c5d2 0 13%, transparent 13.5%),
+        radial-gradient(circle at 15% 85%, #e8defe 0 15%, transparent 15.5%),
+        linear-gradient(135deg,#f9e5da,#fff5f0);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-art::before{
+    content:"";
+
+    position:absolute;
+
+    width:310px;
+    height:310px;
+
+    background:rgba(255,255,255,.58);
+
+    border-radius:50%;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+.hero-bear{
+    position:relative;
+    z-index:2;
+
+    font-size:185px;
+
+    filter:
+        drop-shadow(0 18px 10px rgba(74,41,32,.13));
+
+    animation:bob 3.5s ease-in-out infinite;
+}
+
+.hero-card{
+    position:absolute;
+    z-index:4;
+
+    background:white;
+
+    padding:15px 18px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-small);
+
+    font-size:13px;
+    font-weight:850;
+}
+
+.card-one{
+    top:70px;
+    left:35px;
+}
+
+.card-two{
+    bottom:60px;
+    right:30px;
+}
+
+.decor{
+    position:absolute;
+    font-size:30px;
+}
+
+.decor-one{
+    top:35px;
+    right:45px;
+}
+
+.decor-two{
+    bottom:35px;
+    left:35px;
+}
+
+/* =====================================================
+   STATS
+   ===================================================== */
+
+.stats{
+    background:var(--brown);
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+    padding:25px 15px;
+    text-align:center;
+
+    border-right:1px solid rgba(255,255,255,.12);
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:25px;
+}
+
+.stat span{
+    color:#e9d6cf;
+
+    font-size:12px;
+}
+
+/* =====================================================
+   GENERAL SECTION
+   ===================================================== */
+
+.section{
+    padding:100px 0;
+}
+
+.section-heading{
+    max-width:700px;
+    margin:0 auto 45px;
+
+    text-align:center;
+}
+
+.section-label{
+    color:var(--pink);
+
+    font-size:12px;
+    font-weight:950;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.5px;
+}
+
+.section-heading h2{
+    font-size:48px;
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+    margin:8px 0 13px;
+}
+
+.section-heading p{
+    color:var(--brown-light);
+}
+
+/* =====================================================
+   FEATURED
+   ===================================================== */
+
+.featured{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+
+    gap:35px;
+
+    background:#ffe9ef;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    box-shadow:var(--shadow);
+}
+
+.featured-art{
+    min-height:400px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(135deg,#f7ccd7,#fff3ee);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:155px;
+}
+
+.featured-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.best-badge{
+    align-self:flex-start;
+
+    background:var(--pink);
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    font-size:11px;
+    font-weight:950;
+}
+
+.featured h3{
+    font-size:42px;
+    line-height:1.05;
+
+    margin:15px 0;
+}
+
+.featured p{
+    color:var(--brown-light);
+
+    max-width:560px;
+}
+
+.price-large{
+    font-size:29px;
+    font-weight:950;
+
+    margin:18px 0;
+
+    color:var(--pink);
+}
+
+.featured-points{
+    list-style:none;
+
+    margin-bottom:25px;
+}
+
+.featured-points li{
+    margin:8px 0;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.featured-points li::before{
+    content:"✓";
+
+    color:var(--pink);
+
+    margin-right:9px;
+
+    font-weight:950;
+}
+
+/* =====================================================
+   SHOP FILTERS
+   ===================================================== */
+
+.filter-bar{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-bottom:30px;
+}
+
+.filter{
+    border:1px solid var(--border);
+
+    background:white;
+
+    color:var(--brown);
+
+    padding:10px 17px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--brown);
+    color:white;
+}
+
+/* =====================================================
+   PRODUCT GRID
+   ===================================================== */
+
+.product-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+}
+
+.product{
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-small);
+
+    transition:.3s;
+
+    position:relative;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+
+    box-shadow:var(--shadow);
+}
+
+.product-image{
+    height:240px;
+
+    background:
+        linear-gradient(135deg,#fff0e9,#f2edff);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:100px;
+
+    position:relative;
+}
+
+.product-tag{
+    position:absolute;
+
+    top:13px;
+    left:13px;
+
+    background:white;
+
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    font-size:10px;
+    font-weight:900;
+}
+
+.product-body{
+    padding:18px;
+}
+
+.product-body h3{
+    font-size:18px;
+}
+
+.product-body p{
+    color:var(--brown-light);
+
+    font-size:12px;
+
+    min-height:39px;
+
+    margin:4px 0 10px;
+}
+
+.product-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.product-price{
+    color:var(--pink);
+
+    font-size:17px;
+    font-weight:950;
+}
+
+.product-btn{
+    border:0;
+
+    background:var(--brown);
+    color:white;
+
+    width:37px;
+    height:37px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:17px;
+}
+
+/* =====================================================
+   CATEGORIES
+   ===================================================== */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+}
+
+.category{
+    min-height:230px;
+
+    border-radius:28px;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:var(--shadow-small);
+
+    transition:.25s;
+}
+
+.category:hover{
+    transform:translateY(-6px);
+}
+
+.category:nth-child(1){
+    background:#ffe7ee;
+}
+
+.category:nth-child(2){
+    background:#fff0cf;
+}
+
+.category:nth-child(3){
+    background:#eee8ff;
+}
+
+.category:nth-child(4){
+    background:#e0efdd;
+}
+
+.category-icon{
+    position:absolute;
+
+    top:25px;
+    right:25px;
+
+    font-size:75px;
+}
+
+.category h3{
+    font-size:22px;
+}
+
+.category p{
+    font-size:13px;
+
+    color:var(--brown-light);
+}
+
+/* =====================================================
+   CUSTOM ORDER
+   ===================================================== */
+
+.custom-section{
+    background:#fff0f3;
+}
+
+.custom-box{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+}
+
+.custom-left h2{
+    font-size:50px;
+    line-height:1;
+
+    letter-spacing:-2px;
+
+    margin:8px 0 18px;
+}
+
+.custom-left p{
+    color:var(--brown-light);
+}
+
+.custom-list{
+    list-style:none;
+
+    margin:25px 0;
+}
+
+.custom-list li{
+    background:white;
+
+    margin:10px 0;
+
+    padding:12px 15px;
+
+    border-radius:13px;
+
+    font-size:14px;
+    font-weight:700;
+
+    box-shadow:0 5px 15px rgba(74,41,32,.05);
+}
+
+.custom-list li::before{
+    content:"♡";
+
+    color:var(--pink);
+
+    font-size:18px;
+
+    margin-right:9px;
+}
+
+/* FORM */
+
+.custom-form{
+    background:white;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+}
+
+.form-title{
+    font-size:24px;
+    font-weight:900;
+
+    margin-bottom:18px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+
+    font-size:12px;
+    font-weight:850;
+
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+
+    border:1px solid var(--border);
+
+    background:var(--cream);
+
+    padding:13px 14px;
+
+    border-radius:13px;
+
+    color:var(--brown);
+
+    outline:none;
+
+    font-size:14px;
+}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:var(--pink);
+}
+
+/* =====================================================
+   PROCESS
+   ===================================================== */
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.process-card{
+    text-align:center;
+
+    background:white;
+
+    padding:30px 20px;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow-small);
+}
+
+.process-number{
+    width:58px;
+    height:58px;
+
+    margin:0 auto 15px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--pink-light);
+
+    font-size:21px;
+    font-weight:950;
+}
+
+.process-card h3{
+    font-size:18px;
+
+    margin-bottom:6px;
+}
+
+.process-card p{
+    color:var(--brown-light);
+
+    font-size:13px;
+}
+
+/* =====================================================
+   ABOUT
+   ===================================================== */
+
+.about{
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    gap:45px;
+
+    align-items:center;
+}
+
+.about-art{
+    min-height:420px;
+
+    border-radius:35px;
+
+    background:
+        radial-gradient(circle at 70% 20%,#f5c3d0 0 15%,transparent 15.5%),
+        linear-gradient(135deg,#f5e0d5,#fff2ed);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:160px;
+}
+
+.about h2{
+    font-size:50px;
+    line-height:1;
+
+    letter-spacing:-2px;
+
+    margin:8px 0 20px;
+}
+
+.about p{
+    color:var(--brown-light);
+
+    margin-bottom:15px;
+}
+
+.about-points{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.about-point{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:14px;
+
+    font-size:13px;
+    font-weight:750;
+}
+
+/* =====================================================
+   DELIVERY
+   ===================================================== */
+
+.delivery{
+    background:var(--brown);
+
+    color:white;
+
+    border-radius:35px;
+
+    padding:50px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+.delivery h2{
+    font-size:45px;
+    line-height:1;
+
+    letter-spacing:-2px;
+}
+
+.delivery p{
+    color:#e8d5ce;
+
+    margin-top:15px;
+}
+
+.delivery-list{
+    list-style:none;
+}
+
+.delivery-list li{
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin:9px 0;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+/* =====================================================
+   FAQ
+   ===================================================== */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+
+    border-radius:18px;
+
+    margin-bottom:12px;
+
+    border:1px solid var(--border);
+
+    overflow:hidden;
+}
+
+.faq-question{
+    width:100%;
+
+    background:white;
+
+    border:0;
+
+    color:var(--brown);
+
+    padding:19px;
+
+    text-align:left;
+
+    font-weight:850;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    cursor:pointer;
+}
+
+.faq-answer{
+    display:none;
+
+    padding:0 19px 19px;
+
+    color:var(--brown-light);
+
+    font-size:14px;
+}
+
+.faq-item.open .faq-answer{
+    display:block;
+}
+
+.faq-item.open .faq-question span{
+    transform:rotate(45deg);
+}
+
+/* =====================================================
+   CTA
+   ===================================================== */
+
+.final-cta{
+    text-align:center;
+
+    padding:110px 20px;
+}
+
+.final-cta h2{
+    font-size:55px;
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:15px;
+}
+
+.final-cta p{
+    color:var(--brown-light);
+
+    max-width:600px;
+
+    margin:0 auto 25px;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer{
+    background:#43271f;
+
+    color:white;
+
+    padding:65px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:1.4fr 1fr 1fr;
+
+    gap:50px;
+}
+
+.footer-brand{
+    font-size:30px;
+    font-weight:950;
+
+    margin-bottom:10px;
+}
+
+.footer-about{
+    color:#ddc8c0;
+
+    max-width:400px;
+
+    font-size:13px;
+}
+
+.footer-title{
+    font-size:14px;
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:8px 0;
+
+    color:#ddc8c0;
+
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:45px;
+    padding-top:20px;
+
+    text-align:center;
+
+    color:#c9b4ac;
+
+    font-size:12px;
+}
+
+/* =====================================================
+   TOAST
+   ===================================================== */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+    bottom:25px;
+
+    z-index:5000;
+
+    background:var(--brown);
+    color:white;
+
+    padding:13px 20px;
+
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:750;
+
+    transform:translate(-50%,120px);
+
+    opacity:0;
+
+    transition:.3s;
+
+    box-shadow:var(--shadow);
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+    opacity:1;
+}
+
+/* =====================================================
+   CART
+   ===================================================== */
+
+.cart-count{
+    display:inline-flex;
+
+    width:20px;
+    height:20px;
+
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+    color:var(--pink);
+
+    border-radius:50%;
+
+    font-size:10px;
+
+    margin-left:4px;
+}
+
+/* =====================================================
+   SCROLL ANIMATION
+   ===================================================== */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media(max-width:1000px){
+
+    .hero{
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .hero-art{
+        min-height:420px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .custom-box,
+    .about,
+    .delivery{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:760px){
+
+    .container{
+        width:min(100% - 30px,1180px);
+    }
+
+    .nav-inner{
+        height:68px;
+    }
+
+    .nav-links{
+        position:absolute;
+
+        top:68px;
+        left:15px;
+        right:15px;
+
+        background:var(--cream);
+
+        border:1px solid var(--border);
+
+        border-radius:20px;
+
+        padding:20px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-order{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        padding:55px 0;
+
+        min-height:auto;
+    }
+
+    .hero h1{
+        font-size:53px;
+        letter-spacing:-3px;
+    }
+
+    .hero-art{
+        min-height:340px;
+    }
+
+    .hero-bear{
+        font-size:130px;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stat{
+        border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .section-heading h2{
+        font-size:38px;
+    }
+
+    .featured{
+        grid-template-columns:1fr;
+
+        padding:20px;
+    }
+
+    .featured-art{
+        min-height:280px;
+        font-size:120px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-image{
+        height:190px;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
+    }
+
+    .delivery{
+        padding:35px 25px;
+    }
+
+    .delivery h2{
+        font-size:38px;
+    }
+
+    .final-cta h2{
+        font-size:43px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:24px;
+    }
+
+    .logo-icon{
+        width:40px;
+        height:40px;
+        font-size:23px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero-text{
+        font-size:15px;
+    }
+
+    .hero-art{
+        min-height:290px;
+    }
+
+    .hero-bear{
+        font-size:105px;
+    }
+
+    .card-one{
+        left:15px;
+        top:25px;
+    }
+
+    .card-two{
+        right:15px;
+        bottom:25px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:230px;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .custom-left h2,
+    .about h2{
+        font-size:40px;
+    }
+
+    .final-cta h2{
+        font-size:37px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     ANNOUNCEMENT
+     ===================================================== -->
+
+<div class="announcement">
+    🧶 Handmade with love • Custom orders available • Delivery all over Pakistan 🇵🇰
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<header class="navbar">
+
+<div class="container nav-inner">
+
+<a href="#home" class="logo">
+
+<div class="logo-icon">
+    🧸
+</div>
+
+<span>
+    Laybear <span class="logo-heart">♡</span>
+</span>
+
+</a>
+
+
+<nav class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+
+<a href="#shop">Shop</a>
+
+<a href="#custom">Custom</a>
+
+<a href="#about">About</a>
+
+<a href="#faq">FAQ</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<a
+href="#shop"
+class="nav-order"
+>
+Shop Now 🛍️
+</a>
+
+
+<button
+class="menu"
+id="menuButton"
+aria-label="Open menu"
+>
+☰
+</button>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="container hero" id="home">
+
+<div class="hero-left">
+
+<span class="small-label">
+    🧶 100% Handmade
+</span>
+
+<h1>
+Cute things,
+<br>
+made with
+<span>love.</span>
+</h1>
+
+<p class="hero-text">
+Welcome to Laybear! We create adorable handmade crochet
+and pipe cleaner crafts for gifts, decorating, your bags,
+your phone, and anyone who loves cute little things.
+</p>
+
+<div class="hero-actions">
+
+<a href="#shop" class="primary-btn">
+    Explore Collection →
+</a>
+
+<a href="#custom" class="secondary-btn">
+    Make It Custom ✨
+</a>
+
+</div>
+
+<div class="hero-trust">
+
+<span>♡ Handmade</span>
+
+<span>♡ Custom Designs</span>
+
+<span>♡ Pakistan-wide Delivery</span>
+
+</div>
+
+</div>
+
+
+<div class="hero-art">
+
+<div class="hero-bear">
+    🧸
+</div>
+
+<div class="hero-card card-one">
+    🌸 Cute & Handmade
+</div>
+
+<div class="hero-card card-two">
+    💗 Made specially for you
+</div>
+
+<div class="decor decor-one">✦</div>
+
+<div class="decor decor-two">♡</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+     ===================================================== -->
+
+<section class="stats">
+
+<div class="container stats-grid">
+
+<div class="stat">
+    <strong>100%</strong>
+    <span>Handmade</span>
+</div>
+
+<div class="stat">
+    <strong>Rs. 300+</strong>
+    <span>Starting Price</span>
+</div>
+
+<div class="stat">
+    <strong>Custom</strong>
+    <span>Colors & Designs</span>
+</div>
+
+<div class="stat">
+    <strong>🇵🇰</strong>
+    <span>Pakistan-wide Delivery</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED / BEST SELLER
+     ===================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-label">
+    Customer Favorite
+</span>
+
+<h2>
+Our Best Seller 🔥
+</h2>
+
+<p>
+A little handmade charm can make any bag,
+phone or gift feel extra special.
+</p>
+
+</div>
+
+
+<div class="featured reveal">
+
+<div class="featured-art">
+    🧸
+</div>
+
+
+<div class="featured-content">
+
+<span class="best-badge">
+    🔥 BEST SELLER
+</span>
+
+<h3>
+Handmade Keychains
+</h3>
+
+<p>
+Our keychains are everyone's favorite!
+They're cute, durable and perfect for gifts.
+Choose from our designs or ask us to make
+one specially for you.
+</p>
+
+<div class="price-large">
+    From Rs. 300
+</div>
+
+<ul class="featured-points">
+
+<li>
+    Different colors available
+</li>
+
+<li>
+    Custom characters & designs
+</li>
+
+<li>
+    Add names and letters
+</li>
+
+<li>
+    Perfect for bags, keys & gifts
+</li>
+
+</ul>
+
+<a
+href="#custom"
+class="primary-btn"
+style="align-self:flex-start;"
+>
+    Order a Custom Keychain →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SHOP
+     ===================================================== -->
+
+<section class="section" id="shop">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-label">
+    Handmade Collection
+</span>
+
+<h2>
+Shop Laybear ♡
+</h2>
+
+<p>
+Explore our cute handmade creations.
+Every piece is made with care.
+</p>
+
+</div>
+
+
+<div class="filter-bar">
+
+<button class="filter active" data-filter="all">
+    All
+</button>
+
+<button class="filter" data-filter="crochet">
+    Crochet
+</button>
+
+<button class="filter" data-filter="keychain">
+    Keychains
+</button>
+
+<button class="filter" data-filter="flowers">
+    Flowers
+</button>
+
+<button class="filter" data-filter="charms">
+    Charms
+</button>
+
+</div>
+
+
+<div class="product-grid">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product reveal" data-category="keychain crochet">
+
+<div class="product-image">
+
+<span class="product-tag">
+    BEST SELLER
+</span>
+
+🧸
+
+</div>
+
+<div class="product-body">
+
+<h3>
+Crochet Bear Keychain
+</h3>
+
+<p>
+Cute handmade bear for your bag or keys.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 300+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Crochet Bear Keychain')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product reveal" data-category="keychain crochet">
+
+<div class="product-image">
+    🐰
+</div>
+
+<div class="product-body">
+
+<h3>
+Bunny Keychain
+</h3>
+
+<p>
+A tiny handmade bunny in your favorite color.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 350+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Bunny Keychain')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product reveal" data-category="flowers crochet">
+
+<div class="product-image">
+    🌷
+</div>
+
+<div class="product-body">
+
+<h3>
+Crochet Flower
+</h3>
+
+<p>
+A handmade flower that stays beautiful.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 350+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Crochet Flower')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product reveal" data-category="flowers">
+
+<div class="product-image">
+    💐
+</div>
+
+<div class="product-body">
+
+<h3>
+Crochet Bouquet
+</h3>
+
+<p>
+A thoughtful handmade gift that lasts.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Custom Price
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Crochet Bouquet')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 5 -->
+
+<div class="product reveal" data-category="charms">
+
+<div class="product-image">
+    🍓
+</div>
+
+<div class="product-body">
+
+<h3>
+Cute Fruit Charm
+</h3>
+
+<p>
+Tiny handmade charms for bags and phones.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 300+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Cute Fruit Charm')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 6 -->
+
+<div class="product reveal" data-category="charms">
+
+<div class="product-image">
+    🌸
+</div>
+
+<div class="product-body">
+
+<h3>
+Flower Phone Charm
+</h3>
+
+<p>
+Make your phone a little more adorable.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 300+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Flower Phone Charm')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 7 -->
+
+<div class="product reveal" data-category="crochet">
+
+<div class="product-image">
+    🐻
+</div>
+
+<div class="product-body">
+
+<h3>
+Crochet Stuffed Toy
+</h3>
+
+<p>
+A soft handmade friend made with care.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Custom Price
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Crochet Stuffed Toy')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 8 -->
+
+<div class="product reveal" data-category="flowers">
+
+<div class="product-image">
+    🌹
+</div>
+
+<div class="product-body">
+
+<h3>
+Pipe Cleaner Flower
+</h3>
+
+<p>
+Colorful handmade flowers for gifting.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 300+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Pipe Cleaner Flower')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 9 -->
+
+<div class="product reveal" data-category="keychain">
+
+<div class="product-image">
+    🐼
+</div>
+
+<div class="product-body">
+
+<h3>
+Panda Keychain
+</h3>
+
+<p>
+A cute little panda for your everyday bag.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 350+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Panda Keychain')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 10 -->
+
+<div class="product reveal" data-category="charms">
+
+<div class="product-image">
+    ⭐
+</div>
+
+<div class="product-body">
+
+<h3>
+Star Charm
+</h3>
+
+<p>
+A cute little charm with a handmade touch.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 300+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Star Charm')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 11 -->
+
+<div class="product reveal" data-category="flowers crochet">
+
+<div class="product-image">
+    🌻
+</div>
+
+<div class="product-body">
+
+<h3>
+Crochet Sunflower
+</h3>
+
+<p>
+Bright handmade sunflower for gifting.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 400+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Crochet Sunflower')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 12 -->
+
+<div class="product reveal" data-category="crochet">
+
+<div class="product-image">
+    🐣
+</div>
+
+<div class="product-body">
+
+<h3>
+Mini Crochet Friend
+</h3>
+
+<p>
+A tiny handmade character made for you.
+</p>
+
+<div class="product-bottom">
+
+<span class="product-price">
+    Rs. 400+
+</span>
+
+<button
+class="product-btn"
+onclick="addToOrder('Mini Crochet Friend')"
+>
+    +
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CATEGORIES
+     ===================================================== -->
+
+<section class="section" style="background:#fff5f0;">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-label">
+    What We Make
+</span>
+
+<h2>
+Something cute for everyone.
+</h2>
+
+<p>
+From tiny charms to full bouquets,
+there's always something handmade at Laybear.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+<div class="category">
+
+<div class="category-icon">
+    🧶
+</div>
+
+<h3>
+Crochet
+</h3>
+
+<p>
+Keychains, toys, flowers and more.
+</p>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">
+    💐
+</div>
+
+<h3>
+Bouquets
+</h3>
+
+<p>
+Handmade flowers made to last.
+</p>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">
+    📱
+</div>
+
+<h3>
+Charms
+</h3>
+
+<p>
+Cute decorations for phones and bags.
+</p>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">
+    ✨
+</div>
+
+<h3>
+Pipe Cleaner
+</h3>
+
+<p>
+Colorful flowers and cute crafts.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CUSTOM ORDERS
+     ===================================================== -->
+
+<section class="section custom-section" id="custom">
+
+<div class="container custom-box">
+
+
+<div class="custom-left">
+
+<span class="section-label">
+    Your Idea • Our Craft
+</span>
+
+<h2>
+Make it personal.
+</h2>
+
+<p>
+Have a specific color, character or name in mind?
+We do custom orders! Tell us what you want and
+we'll discuss the design with you.
+</p>
+
+
+<ul class="custom-list">
+
+<li>
+Different colors
+</li>
+
+<li>
+Different designs & characters
+</li>
+
+<li>
+Names & letters
+</li>
+
+<li>
+Special touches
+</li>
+
+<li>
+Personalized gifts
+</li>
+
+</ul>
+
+<a
+href="https://www.instagram.com/laybear_creations/"
+target="_blank"
+class="primary-btn"
+>
+    DM Us on Instagram →
+</a>
+
+</div>
+
+
+<form class="custom-form" id="customForm">
+
+<div class="form-title">
+    Tell us your idea ✨
+</div>
+
+
+<div class="form-group">
+
+<label>
+Your Name
+</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="Your name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+What would you like?
+</label>
+
+<select id="customProduct">
+
+<option>
+Keychain
+</option>
+
+<option>
+Crochet Bouquet
+</option>
+
+<option>
+Stuffed Toy
+</option>
+
+<option>
+Mobile Charm
+</option>
+
+<option>
+Pipe Cleaner Flower
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Your Idea
+</label>
+
+<textarea
+id="customIdea"
+placeholder="Tell us about colors, character, name, size, etc."
+required
+></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="primary-btn"
+style="width:100%;"
+>
+    Prepare My Order 💌
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     HOW IT WORKS
+     ===================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-label">
+    Simple & Easy
+</span>
+
+<h2>
+How ordering works.
+</h2>
+
+<p>
+Just a few simple steps between you
+and your handmade Laybear creation.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process-card reveal">
+
+<div class="process-number">
+    01
+</div>
+
+<h3>
+Choose
+</h3>
+
+<p>
+Pick something from our collection
+or think of a custom idea.
+</p>
+
+</div>
+
+
+<div class="process-card reveal">
+
+<div class="process-number">
+    02
+</div>
+
+<h3>
+Message Us
+</h3>
+
+<p>
+DM us on Instagram with your
+order and requirements.
+</p>
+
+</div>
+
+
+<div class="process-card reveal">
+
+<div class="process-number">
+    03
+</div>
+
+<h3>
+We Create
+</h3>
+
+<p>
+Your item is handmade carefully
+with love and good materials.
+</p>
+
+</div>
+
+
+<div class="process-card reveal">
+
+<div class="process-number">
+    04
+</div>
+
+<h3>
+Delivery
+</h3>
+
+<p>
+We arrange delivery to your
+city or area in Pakistan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
+
+<section class="section" id="about" style="background:#fff5f0;">
+
+<div class="container about">
+
+<div class="about-art">
+    🧸
+</div>
+
+
+<div>
+
+<span class="section-label">
+    About Laybear
+</span>
+
+<h2>
+Made by hand.
+Made with heart.
+</h2>
+
+<p>
+Laybear is all about creating cute handmade things
+that bring a little more happiness into everyday life.
+</p>
+
+<p>
+Every product is 100% handmade and made with care
+using good-quality materials.
+</p>
+
+<p>
+Whether you're buying a gift, decorating your room,
+or simply making your bag or phone cuter,
+we're here to make something special.
+</p>
+
+
+<div class="about-points">
+
+<div class="about-point">
+    🧶 100% Handmade
+</div>
+
+<div class="about-point">
+    💗 Made With Care
+</div>
+
+<div class="about-point">
+    🎨 Custom Designs
+</div>
+
+<div class="about-point">
+    🎁 Gift Friendly
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DELIVERY
+     ===================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="delivery">
+
+<div>
+
+<span class="section-label" style="color:#f5a9bc;">
+    Shipping
+</span>
+
+<h2>
+We deliver
+all over Pakistan 🇵🇰
+</h2>
+
+<p>
+No matter where you are, you can order your
+favorite Laybear handmade creation.
+</p>
+
+</div>
+
+
+<ul class="delivery-list">
+
+<li>
+🚚 Delivery available across Pakistan
+</li>
+
+<li>
+📍 Charges depend on your city / area
+</li>
+
+<li>
+💳 Delivery charges are paid by the customer
+</li>
+
+<li>
+💌 Contact us on Instagram for order details
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+     ===================================================== -->
+
+<section class="section" id="faq">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-label">
+    Questions
+</span>
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+<p>
+Everything you need to know before ordering.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+What is the starting price?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Our products start from around Rs. 300.
+The final price depends on the size, design
+and customization.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Do you make custom designs?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes! We can customize colors, characters,
+names, letters and other special details.
+Send us your idea on Instagram and we'll
+discuss it with you.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Do you deliver outside your city?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes. Laybear offers delivery all over Pakistan.
+Delivery charges depend on your city or area
+and are paid by the customer.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+How do I place an order?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Contact us through Instagram at
+@laybear_creations. Tell us which product
+you want, your customization requirements
+if any, and your delivery details.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Are the products actually handmade?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes. Laybear products are 100% handmade
+and created with care.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Can I order something as a gift?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Absolutely. Our handmade keychains,
+bouquets, charms and stuffed toys can make
+cute gifts. You can also ask about custom
+colors and special touches.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+     ===================================================== -->
+
+<section class="final-cta" id="contact">
+
+<div class="container">
+
+<span class="section-label">
+    Let's Create Something Cute
+</span>
+
+<h2>
+Your idea could be<br>
+our next creation. ♡
+</h2>
+
+<p>
+For orders, custom designs and questions,
+contact Laybear only through Instagram.
+</p>
+
+<a
+href="https://www.instagram.com/laybear_creations/"
+target="_blank"
+class="primary-btn"
+>
+    📸 @laybear_creations
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-brand">
+    🧸 Laybear ♡
+</div>
+
+<p class="footer-about">
+Handmade crochet and pipe cleaner crafts,
+made with love and care. Cute things for
+gifts, decorating, bags, phones and everyday joy.
+</p>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+    Explore
+</div>
+
+<ul class="footer-links">
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#shop">Shop</a>
+</li>
+
+<li>
+<a href="#custom">Custom Orders</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#faq">FAQ</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+    Contact
+</div>
+
+<ul class="footer-links">
+
+<li>
+<a
+href="https://www.instagram.com/laybear_creations/"
+target="_blank"
+>
+📸 Instagram
+</a>
+</li>
+
+<li>
+🇵🇰 Delivery all over Pakistan
+</li>
+
+<li>
+💰 Starting from Rs. 300
+</li>
+
+<li>
+🧶 100% Handmade
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Laybear • Handmade with love ♡
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     TOAST
+     ===================================================== -->
+
+<div class="toast" id="toast">
+    Added to your order ♡
+</div>
+
+
+<script>
+
+/* =====================================================
+   MOBILE MENU
+   ===================================================== */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuButton.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+    menuButton.textContent =
+        navLinks.classList.contains("open")
+        ? "✕"
+        : "☰";
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        menuButton.textContent = "☰";
+
+    });
+
+});
+
+
+/* =====================================================
+   PRODUCT FILTER
+   ===================================================== */
+
+const filterButtons =
+document.querySelectorAll(".filter");
+
+const products =
+document.querySelectorAll(".product");
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const filter =
+            button.dataset.filter;
+
+        products.forEach(product => {
+
+            const categories =
+                product.dataset.category;
+
+            if(
+                filter === "all" ||
+                categories.includes(filter)
+            ){
+
+                product.style.display = "block";
+
+                setTimeout(() => {
+                    product.style.opacity = "1";
+                    product.style.transform =
+                        "translateY(0)";
+                },20);
+
+            }else{
+
+                product.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =====================================================
+   ORDER CART / ORDER LIST
+   ===================================================== */
+
+let orderItems = [];
+
+
+function addToOrder(productName){
+
+    orderItems.push(productName);
+
+    showToast(
+        productName +
+        " added to your order ♡"
+    );
+
+}
+
+
+/* =====================================================
+   TOAST
+   ===================================================== */
+
+let toastTimer;
+
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    },2200);
+
+}
+
+
+/* =====================================================
+   CUSTOM ORDER FORM
+   ===================================================== */
+
+const customForm =
+document.getElementById("customForm");
+
+
+customForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("customerName").value;
+
+    const product =
+        document.getElementById("customProduct").value;
+
+    const idea =
+        document.getElementById("customIdea").value;
+
+
+    const message =
+        `Hi Laybear! 💗
+
+My name is ${name}.
+
+I would like to order:
+${product}
+
+My custom idea:
+${idea}
+
+Please let me know the price and details. Thank you! 🧶`;
+
+
+    /*
+       Instagram does not provide a universal
+       pre-filled DM URL, so we copy the order
+       message for the customer.
+    */
+
+    navigator.clipboard.writeText(message)
+    .then(() => {
+
+        showToast(
+            "Order message copied! Paste it in Instagram ♡"
+        );
+
+        setTimeout(() => {
+
+            window.open(
+                "https://www.instagram.com/laybear_creations/",
+                "_blank"
+            );
+
+        },1200);
+
+    })
+    .catch(() => {
+
+        showToast(
+            "Please copy your order details and DM us on Instagram."
+        );
+
+        window.open(
+            "https://www.instagram.com/laybear_creations/",
+            "_blank"
+        );
+
+    });
+
+});
+
+
+/* =====================================================
+   FAQ
+   ===================================================== */
+
+document.querySelectorAll(".faq-question")
+.forEach(question => {
+
+    question.addEventListener("click", () => {
+
+        const item =
+            question.parentElement;
+
+        const wasOpen =
+            item.classList.contains("open");
+
+
+        document.querySelectorAll(".faq-item")
+        .forEach(other => {
+
+            other.classList.remove("open");
+
+        });
+
+
+        if(!wasOpen){
+
+            item.classList.add("open");
+
+        }
+
+    });
+
+});
+
+
+/* =====================================================
+   SCROLL REVEAL
+   ===================================================== */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+                revealObserver.unobserve(
+                    entry.target
+                );
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =====================================================
+   SMOOTH INTERNAL LINKS
+   ===================================================== */
+
+document.querySelectorAll('a[href^="#"]')
+.forEach(link => {
+
+    link.addEventListener("click", function(event){
+
+        const target =
+            document.querySelector(
+                this.getAttribute("href")
+            );
+
+        if(target){
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
